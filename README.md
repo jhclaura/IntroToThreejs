@@ -16,3 +16,6 @@ Pam & Laura
 
 This opens the html file with template.js. In there you can add custom elements, e.g. camera, lights, mesh etc.
 Change the script link in html file from "template.js" to "script.js", then you can see what we made in the workshop, which is a rotation cube! Woohoo!
+
+
+[Here is a simple basic powerpoint :)](https://docs.google.com/presentation/d/1trkfNJqvpGR25jx57BDW0yiKH4mATuIkeHhI63SdyiA/pub?start=false&loop=false&delayms=3000)
