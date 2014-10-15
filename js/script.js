@@ -9,6 +9,7 @@
 // standard global variables
 var scene, camera, renderer;
 
+var light;
 
 var container;
 var controls;
@@ -16,6 +17,7 @@ var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
 
 // custom global variables
+var cube;
 
 
 
@@ -41,7 +43,13 @@ function init()
 
 	// LIGHT
 	// create light for the scene
+	light = new THREE.DirectionalLight( 0xffffff, 0.5 );
+	light.position.set(1,1,0);
+	scene.add(light);
 
+	light = new THREE.DirectionalLight( 0xffff00, 0.5 );
+	light.position.set(0,1,1);
+	scene.add(light);
 
 
 	// CAMERA
@@ -53,7 +61,10 @@ function init()
 
 
 	// CUBE
-
+	var cubeGeometry = new THREE.BoxGeometry(50,50,50);
+	var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
+	cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+	scene.add(cube);
 
 
 
@@ -96,6 +107,7 @@ function update()
 {		
 	controls.update();
 
+	cube.rotation.x += 0.1;
 }
 
 function render() 
