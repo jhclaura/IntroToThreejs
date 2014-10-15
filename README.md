@@ -1,8 +1,6 @@
 Intro to Three.js
-
-Javascript Club[0]
+------
 Pam & Laura
-
 
 
 [let's use localhost to serve the page!]
