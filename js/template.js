@@ -2,14 +2,13 @@
 
 
 
-
 ////////////////////////////////////////////////////////////	
 // SET_UP_VARIABLES
 ////////////////////////////////////////////////////////////
 
 // standard global variables
-var container;
 var scene, camera, renderer;
+var container;
 var controls;
 var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
@@ -42,6 +41,10 @@ function init()
 
 
 
+
+
+
+
 	// CAMERA
 	// PerspectiveCamera( field of view, aspect, near, far )
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
@@ -52,14 +55,19 @@ function init()
 
 	// CUBE
 
+
+
+
+
+
 	
 
 	// RENDERER
 	container = document.createElement('div');
 	document.body.appendChild(container);
 	renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-	renderer.setClearColor(0xeff5d5, 1);			//set background color
 	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setClearColor(0xeff5d5, 1);			//set background color
 	container.appendChild(renderer.domElement);
 
 	
@@ -82,18 +90,15 @@ function animate()
 	update();
 }
 
-
 function update()
 {		
 	controls.update();
 }
 
-
 function render() 
 {	
 	renderer.render( scene, camera );
 }
-
 
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
