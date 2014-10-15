@@ -15,4 +15,4 @@ Pam & Laura
 4. Open browser and type localhost:8000
 
 This opens the html file with template.js. In there you can add custom elements, e.g. camera, lights, mesh etc.
-Change the scrip link in html from "template.js" to "script.js", then you can see what we made in the workshop, which is rotation cube! Woohoo!
+Change the script link in html file from "template.js" to "script.js", then you can see what we made in the workshop, which is a rotation cube! Woohoo!
