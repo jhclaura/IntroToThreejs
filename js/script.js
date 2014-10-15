@@ -1,8 +1,4 @@
 	
-
-
-
-
 ////////////////////////////////////////////////////////////	
 // SET_UP_VARIABLES
 ////////////////////////////////////////////////////////////
@@ -15,11 +11,12 @@ var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
 
 // custom global variables
+var cube, cubeGeo, cubeMat;
 
-
-// kind of like setup()
+// e.g. setup()
 init();
-// kind of like draw()/loop()
+
+// e.g. draw()/loop()
 animate();
 
 
@@ -38,8 +35,14 @@ function init()
 
 
 	// LIGHT
-	// create light for the scene
+	// create a light
+	var light = new THREE.DirectionalLight(0xffffff, 1);
+	light.position.set(5,10,0);
+	scene.add(light);
 
+	light = new THREE.DirectionalLight(0xffff00, 1);
+	light.position.set(-5,10,10);
+	scene.add(light);
 
 
 	// CAMERA
@@ -51,10 +54,14 @@ function init()
 
 
 	// CUBE
-
+	cubeGeo = new THREE.BoxGeometry(200, 200, 200);
+	cubeMat = new THREE.MeshLambertMaterial({color: 0xb9e644});
+	cube = new THREE.Mesh(cubeGeo, cubeMat);
+	scene.add(cube);
 	
 
 	// RENDERER
+	// won't have big change most of the time
 	container = document.createElement('div');
 	document.body.appendChild(container);
 	renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
@@ -74,26 +81,22 @@ function init()
 		
 }
 
-
 function animate() 
 {
-    requestAnimationFrame( animate );				//http://creativejs.com/resources/requestanimationframe/
+    requestAnimationFrame( animate );
 	render();		
 	update();
 }
-
 
 function update()
 {		
 	controls.update();
 }
 
-
 function render() 
 {	
 	renderer.render( scene, camera );
 }
-
 
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
